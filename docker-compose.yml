@@ -1,0 +1,14 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  app_database:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+    ports:
+      - '5432:5432'
