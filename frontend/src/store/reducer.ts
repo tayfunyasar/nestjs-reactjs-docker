@@ -1,8 +1,6 @@
-import { combineReducers } from 'redux'
-import { reducer as mobile } from './mobile'
+import { combineReducers } from 'redux';
+import mobileReducer from './mobile/reducer'
 
-const reducers = {
-  mobile
-}
-
-export const appReducer = combineReducers(reducers)
+export default combineReducers({
+  mobile: mobileReducer
+});  
