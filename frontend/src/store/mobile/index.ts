@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Thunk } from 'store/types'
 import { MobileEntity, MobileState } from './types'
 
-const BASE_URL = process.env.BASE_URL;
+const { BASE_URL } = process.env;
 
 export const initialState: MobileState = {
     items: [],
@@ -34,7 +34,7 @@ export const { reducer } = mobile
 
 export const { request, success, failure } = mobile.actions
 
-export const getNews = (search: string): Thunk => {
+export const getMobiles = (): Thunk => {
     return async (dispatch) => {
         dispatch(request())
         try {
