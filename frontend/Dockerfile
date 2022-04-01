@@ -1,0 +1,16 @@
+FROM node:16 as production 
+
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
+
+WORKDIR /usr/src/app
+
+COPY package.json .
+
+RUN npm i
+
+COPY . . 
+
+RUN npm build
+
+CMD ["npm", "start"]
