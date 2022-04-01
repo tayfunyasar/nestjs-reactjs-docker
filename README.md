@@ -1,25 +1,56 @@
-# Simple Rest endpoints with Nest.js backend, ReactJS frontend
+# Simple Rest Endpoints with Nest.js backend, ReactJS frontend, Postgres in Docker
 
-typeorm implementation: https://medium.com/@gausmann.simon/nestjs-typeorm-and-postgresql-full-example-development-and-project-setup-working-with-database-c1a2b1b11b8f
+For development, you will need Docker and Node.js installed on your device.
 
-common/envs implementation: https://github.com/hellokvn/medium-nest-typeorm-postgres-sample/tree/main/src/common/envs
+You can install docker and nodejs easily with following commands.
+
 
 ## Getting Started
-Install TypeScript globally on your machine if you don't have it installed already:
+### Docker
+- #### Docker installation on macOS
+```
+brew install --cask docker
+```
+- #### Other operating systems
 
+Please visit the [official Docker website](https://docker.com/)
+
+### Node
+- #### Node installation on macOS
+
+
+      $ brew install nodejs
+      $ npm install -g typescript
+
+- #### Other Operating Systems
+  You can find more information about the installation on the [official Node.js website](https://nodejs.org/).
+
+If the installation successful finished, you can run the following commands to validate.
+
+    $ node --version
+    v12.22.10
+
+    $ npm --version
+    6.14.16
+
+---
+
+## Install the app
+
+    $ git clone https://github.com/tayfunyasar/nestjs-reactjs-docker
+    $ cd nestjs-reactjs-docker
+    $ npm i
+
+## Run Postgres via Docker
 ```bash
-npm install -g typescript
+docker-compose up
 ```
 
 ## Backend
-### Change directory into the backend
+Change directory into the backend and install its dependencies
+
 ```bash
 cd backend
-```
-
-### Install backend dependencies
-
-```bash
 npm install
 ```
 
@@ -92,3 +123,10 @@ Finally open your browser and view the application on http://localhost:3000
 [React.js]()
 [TypeScript]()
 [Postgres]() 
+
+#### sources
+```
+typeorm implementation: https://medium.com/@gausmann.simon/nestjs-typeorm-and-postgresql-full-example-development-and-project-setup-working-with-database-c1a2b1b11b8f
+
+common/envs implementation: https://github.com/hellokvn/medium-nest-typeorm-postgres-sample/tree/main/src/common/envs
+```
