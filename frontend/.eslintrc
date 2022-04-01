@@ -30,7 +30,8 @@
     "jsx-a11y/control-has-associated-label": "off",
     "no-param-reassign": "off",
     "import/no-cycle": "off",
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "@typescript-eslint/camelcase": "off"
   },
   "settings": {
     "import/resolver": {
