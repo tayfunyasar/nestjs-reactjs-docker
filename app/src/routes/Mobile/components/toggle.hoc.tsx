@@ -4,13 +4,13 @@ interface Props {
 }
 
 const WithToggle = (ChildComponent: React.ComponentType<Props>) => {
+    const [toggle, setToggle] = useState(false);
+
+    const onClickToggle = () => {
+        setToggle(!toggle);
+    }
+
     return (props: any) => {
-        const [toggle, setToggle] = useState(false);
-
-        const onClickToggle = () => {
-            setToggle(!toggle);
-        }
-
         return <>
             <button type="button" onClick={onClickToggle}>toggle add component</button>
             <br />
