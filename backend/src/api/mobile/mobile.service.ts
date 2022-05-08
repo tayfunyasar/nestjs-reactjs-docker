@@ -15,7 +15,15 @@ export class MobileService {
       .description(request.description)
       .build();
 
-    return await this.mobileRepository.add(mobileEntity);
+    return this.mobileRepository.add(mobileEntity);
+  }
+
+  async get(): Promise<MobileEntity[]> {
+    return this.mobileRepository.findAll();
+  }
+
+  async getById(id: number) {
+    return this.mobileRepository.findById(id);
   }
 
 }

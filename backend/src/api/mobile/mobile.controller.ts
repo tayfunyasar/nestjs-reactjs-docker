@@ -10,8 +10,20 @@ export class MobileController {
   }
 
   @Post()
-  public async addMobile(@Body() input: MobileInput): Promise<MobileEntity> {
+  public async add(@Body() input: MobileInput): Promise<MobileEntity> {
     return this.mobileService.add(input);
+  }
+
+  @Get(':id')
+  public async getById(
+    @Param('id') mobileId: number,
+  ): Promise<MobileEntity> {
+    return this.mobileService.getById(mobileId);
+  }
+
+  @Get()
+  public async getAll(): Promise<MobileEntity[]> {
+    return this.mobileService.get();
   }
 
   /*
@@ -27,13 +39,6 @@ export class MobileController {
   @HttpCode(HttpStatus.NO_CONTENT)
   public async deleteProduct(@Param('mobileId') mobileId: string) {
     await this.mobileService.delete(mobileId);
-  }
-
-  @Get(':mobileId')
-  public async getProduct(
-    @Param('mobileId') mobileId: string,
-  ): Promise<MobileEntity> {
-    return this.mobileService.get(mobileId);
   }
   */
 }

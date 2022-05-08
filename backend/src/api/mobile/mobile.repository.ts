@@ -7,15 +7,18 @@ export class MobileRepository {
   constructor(
     @InjectRepository(MobileEntity) private readonly mobileRepository: Repository<MobileEntity>,
   ) {
-
   }
 
   async add(entity: MobileEntity): Promise<MobileEntity> {
     console.log('saving %d', entity);
-    return await this.mobileRepository.save(entity);
+    return this.mobileRepository.save(entity);
   }
 
   async findAll(): Promise<MobileEntity[]> {
-    return await this.mobileRepository.find();
+    return this.mobileRepository.find();
+  }
+
+  async findById(id: number): Promise<MobileEntity> {
+    return this.mobileRepository.findOne(id);
   }
 }
